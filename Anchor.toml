@@ -3,6 +3,7 @@ seeds = false
 [programs.localnet]
 solos = "CRM9fKJvPbLWckdHdrRMndtRDvhXVW5dxD6tCeAYcZZ5"
 solos_strategy = "C3E7wH4XAPRDnqeczaqNdrmvuafr8DSz8iPrjQ2iNbMk"
+token_lending_anchor_wrapper = "BVnmVsfaHhHm8QMNYHezgXvNMuNwAz2JaR3Xbwx86SxH"
 
 [registry]
 url = "https://anchor.projectserum.com"
