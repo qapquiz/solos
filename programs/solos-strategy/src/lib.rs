@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::token::{Mint, TokenAccount};
 
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("E1eeAWjEGqfH1CQ1SAtsnnuwwoJyrswjjboEwGLg8eG4");
 
 #[program]
 pub mod solos_strategy {

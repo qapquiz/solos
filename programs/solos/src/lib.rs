@@ -1,13 +1,15 @@
 use anchor_lang::prelude::*;
 
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("Z8L5or7nVJEZvZ5T7XuKrAG1SWSTLW7x3tp158TYRhy");
 
 #[program]
 pub mod solos {
     use super::*;
-    pub fn initialize(ctx: Context<Initialize>) -> ProgramResult {
+    pub fn initialize(ctx: Context<Initialize>, authority_seed: String, authority_bump: u8) -> ProgramResult {
         let database = &mut ctx.accounts.database;
         database.current_strategy = *ctx.accounts.strategy.key;
+        database.authority_seed = authority_seed;
+        database.authority_bump = *ctx.bumps.get("database").unwrap();
         database.authority = *ctx.accounts.database_authority_pda.key;
         Ok(())
     }
@@ -19,17 +21,17 @@ pub mod solos {
 }
 
 #[derive(Accounts)]
-#[instruction(authority_bump: u8)]
+#[instruction(authority_seed: String)]
 pub struct Initialize<'info> {
     #[account(
         init,
         payer = payer,
-        space = SolosDatabase::space(),
+        space = SolosDatabase::space(&authority_seed),
     )]
     pub database: Account<'info, SolosDatabase>,
     #[account(
-        seeds = [b"database_authority"],
-        bump = authority_bump,
+        seeds = [authority_seed.as_ref()],
+        bump,
     )]
     pub database_authority_pda: AccountInfo<'info>,
     pub strategy: AccountInfo<'info>,
@@ -46,13 +48,16 @@ pub struct SetStrategy {
 #[account]
 pub struct SolosDatabase {
     pub current_strategy: Pubkey,
+    pub authority_seed: String,
+    pub authority_bump: u8,
     pub authority: Pubkey,
 }
 
 impl SolosDatabase {
-    pub fn space() -> usize {
-        8 + 
-        32 + 
-        32
+    pub fn space(authority_seed: &str) -> usize {
+        8 +  // discriminator
+        4 + authority_seed.len() + // database_authority_seed
+        1 + // database_authority_bump
+        32 // authority
     }
 }
