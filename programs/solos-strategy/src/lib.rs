@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::token::{Mint, TokenAccount};
 
-declare_id!("E1eeAWjEGqfH1CQ1SAtsnnuwwoJyrswjjboEwGLg8eG4");
+declare_id!("C3E7wH4XAPRDnqeczaqNdrmvuafr8DSz8iPrjQ2iNbMk");
 
 #[program]
 pub mod solos_strategy {
@@ -14,13 +14,13 @@ pub mod solos_strategy {
         Ok(())
     }
 
-    pub fn withdraw_reserve_and_obligation(ctx: Context<WithdrawReserveAndObligation>, amount: u64) -> ProgramResult {
-        Ok(())
-    }
+    // pub fn withdraw_reserve_and_obligation(ctx: Context<WithdrawReserveAndObligation>, amount: u64) -> ProgramResult {
+    //     Ok(())
+    // }
 
-    pub fn sell_reserves(ctx: Context<SellReserves>) -> ProgramResult {
-        Ok(())
-    }
+    // pub fn sell_reserves(ctx: Context<SellReserves>) -> ProgramResult {
+    //     Ok(())
+    // }
 }
 
 #[derive(Accounts)]
@@ -37,8 +37,8 @@ pub struct DepositReserveAndObligation<'info> {
     pub depositor: AccountInfo<'info>,
 }
 
-#[derive(Accounts)]
-pub struct WithdrawReserveAndObligation {}
+// #[derive(Accounts)]
+// pub struct WithdrawReserveAndObligation<'info> {}
 
-#[derive(Accounts)]
-pub struct SellReserves {}
+// #[derive(Accounts)]
+// pub struct SellReserves<'info> {}

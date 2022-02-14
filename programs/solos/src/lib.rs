@@ -1,11 +1,11 @@
 use anchor_lang::prelude::*;
 
-declare_id!("Z8L5or7nVJEZvZ5T7XuKrAG1SWSTLW7x3tp158TYRhy");
+declare_id!("CRM9fKJvPbLWckdHdrRMndtRDvhXVW5dxD6tCeAYcZZ5");
 
 #[program]
 pub mod solos {
     use super::*;
-    pub fn initialize(ctx: Context<Initialize>, authority_seed: String, authority_bump: u8) -> ProgramResult {
+    pub fn initialize(ctx: Context<Initialize>, authority_seed: String) -> ProgramResult {
         let database = &mut ctx.accounts.database;
         database.current_strategy = *ctx.accounts.strategy.key;
         database.authority_seed = authority_seed;

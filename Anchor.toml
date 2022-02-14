@@ -1,8 +1,8 @@
 [features]
 seeds = false
 [programs.localnet]
-solos = "Z8L5or7nVJEZvZ5T7XuKrAG1SWSTLW7x3tp158TYRhy"
-solos_strategy = "E1eeAWjEGqfH1CQ1SAtsnnuwwoJyrswjjboEwGLg8eG4"
+solos = "CRM9fKJvPbLWckdHdrRMndtRDvhXVW5dxD6tCeAYcZZ5"
+solos_strategy = "C3E7wH4XAPRDnqeczaqNdrmvuafr8DSz8iPrjQ2iNbMk"
 
 [registry]
 url = "https://anchor.projectserum.com"
