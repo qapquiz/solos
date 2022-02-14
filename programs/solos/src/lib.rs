@@ -15,7 +15,7 @@ pub mod solos {
     }
 
     pub fn set_strategy(ctx: Context<SetStrategy>) -> ProgramResult {
-        // @T0D0_FROM_UPSTREAM #2 replace current strategy in SolosDatabase
+        // @todo #2 replace current strategy in SolosDatabase
         Ok(())
     }
 }
@@ -41,7 +41,7 @@ pub struct Initialize<'info> {
 
 #[derive(Accounts)]
 pub struct SetStrategy {
-    // @T0D0_FROM_UPSTREAM #1 add accounts for setting new strategy
+    // @todo #1 add accounts for setting new strategy
     //  it will replace current_strategy in SolosDatabase
 }
 

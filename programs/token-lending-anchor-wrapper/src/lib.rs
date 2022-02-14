@@ -3,7 +3,7 @@ use spl_token_lending::instruction::LendingInstruction;
 
 declare_id!("BVnmVsfaHhHm8QMNYHezgXvNMuNwAz2JaR3Xbwx86SxH");
 
-// @T0D0_FROM_UPSTREAM #3 need to change token-lending program id
+// @todo #3 need to change token-lending program id
 //  do not know yet where to get this
 pub fn token_lending_program_id() -> Pubkey {
     Pubkey::new(&[1, 2, 3, 4]) 
