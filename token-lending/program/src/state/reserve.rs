@@ -141,7 +141,7 @@ impl Reserve {
         amount_to_borrow: u64,
         max_borrow_value: Decimal,
     ) -> Result<CalculateBorrowResult, ProgramError> {
-        // @TODO: add lookup table https://git.io/JOCYq
+        // @T0D0_FROM_UPSTREAM: add lookup table https://git.io/JOCYq
         let decimals = 10u64
             .checked_pow(self.liquidity.mint_decimals as u32)
             .ok_or(LendingError::MathOverflow)?;
@@ -720,7 +720,7 @@ const RESERVE_LEN: usize = 571; // 1 + 8 + 1 + 32 + 32 + 1 + 32 + 32 + 32 + 8 + 
 impl Pack for Reserve {
     const LEN: usize = RESERVE_LEN;
 
-    // @TODO: break this up by reserve / liquidity / collateral / config https://git.io/JOCca
+    // @T0D0_FROM_UPSTREAM: break this up by reserve / liquidity / collateral / config https://git.io/JOCca
     fn pack_into_slice(&self, output: &mut [u8]) {
         let output = array_mut_ref![output, 0, RESERVE_LEN];
         #[allow(clippy::ptr_offset_with_cast)]

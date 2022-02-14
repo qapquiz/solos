@@ -142,7 +142,7 @@ fn main() {
         .subcommand(
             SubCommand::with_name("add-reserve")
                 .about("Add a reserve to a lending market")
-                // @TODO: use is_valid_signer
+                // @T0D0_FROM_UPSTREAM: use is_valid_signer
                 .arg(
                     Arg::with_name("lending_market_owner")
                         .long("market-owner")
@@ -152,7 +152,7 @@ fn main() {
                         .required(true)
                         .help("Owner of the lending market"),
                 )
-                // @TODO: use is_valid_signer
+                // @T0D0_FROM_UPSTREAM: use is_valid_signer
                 .arg(
                     Arg::with_name("source_liquidity_owner")
                         .long("source-owner")
@@ -180,7 +180,7 @@ fn main() {
                         .required(true)
                         .help("SPL Token account to deposit initial liquidity from"),
                 )
-                // @TODO: use is_amount_or_all
+                // @T0D0_FROM_UPSTREAM: use is_amount_or_all
                 .arg(
                     Arg::with_name("liquidity_amount")
                         .long("amount")

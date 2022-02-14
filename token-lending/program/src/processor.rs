@@ -719,7 +719,7 @@ fn process_refresh_obligation(program_id: &Pubkey, accounts: &[AccountInfo]) -> 
             return Err(LendingError::ReserveStale.into());
         }
 
-        // @TODO: add lookup table https://git.io/JOCYq
+        // @T0D0_FROM_UPSTREAM: add lookup table https://git.io/JOCYq
         let decimals = 10u64
             .checked_pow(deposit_reserve.liquidity.mint_decimals as u32)
             .ok_or(LendingError::MathOverflow)?;
@@ -770,7 +770,7 @@ fn process_refresh_obligation(program_id: &Pubkey, accounts: &[AccountInfo]) -> 
 
         liquidity.accrue_interest(borrow_reserve.liquidity.cumulative_borrow_rate_wads)?;
 
-        // @TODO: add lookup table https://git.io/JOCYq
+        // @T0D0_FROM_UPSTREAM: add lookup table https://git.io/JOCYq
         let decimals = 10u64
             .checked_pow(borrow_reserve.liquidity.mint_decimals as u32)
             .ok_or(LendingError::MathOverflow)?;

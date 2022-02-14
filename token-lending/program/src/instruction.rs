@@ -219,7 +219,7 @@ pub enum LendingInstruction {
     BorrowObligationLiquidity {
         /// Amount of liquidity to borrow - u64::MAX for 100% of borrowing power
         liquidity_amount: u64,
-        // @TODO: slippage constraint - https://git.io/JmV67
+        // @T0D0_FROM_UPSTREAM: slippage constraint - https://git.io/JmV67
     },
 
     // 11
